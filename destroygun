@@ -1,0 +1,22 @@
+
+script_name("DestroyGun Q")
+script_author("ChatGPT")
+
+require "lib.moonloader"
+local vkeys = require "vkeys"
+
+function main()
+    repeat
+        wait(0)
+    until isSampAvailable()
+
+    while true do
+        wait(0)
+
+        if isKeyJustPressed(vkeys.VK_Q)
+        and not sampIsChatInputActive()
+        and not sampIsDialogActive() then
+            sampSendChat("/destroygun")
+        end
+    end
+end
